@@ -1,0 +1,125 @@
+.ui-search{
+    background: url(../img/ui-search.jpg) center no-repeat;
+    color: #ffffff;
+    font-size: 14px;
+    position: relative;
+}
+.ui-search-selected{
+    width: 70px;
+    height: 38px;
+    line-height: 38px;
+    position: absolute;
+    left: 0;
+    top:0;
+    text-indent: 14px;
+}
+.ui-search-selected-list{
+    display: none;
+    position: absolute;
+    width: 67px;
+    background-color: #ffffff;
+    box-shadow: 3px 3px 5px rgba(0,0,0,.2);
+    line-height: 24px;
+    left:2px;
+    top: 36px;
+    z-index: 2;;
+}
+.ui-search-selected-list a{
+    display: block;
+    text-align: center;
+}
+.ui-search-selected-list a:hover{
+    background: #ebeff5;
+}
+.ui-search-input{
+    width: 208px;
+    height: 26px;
+    position: absolute;
+    left: 73px;
+    top:5px;
+    color: #a5a2a2;
+    font-size: 13px;
+    line-height: 26px;
+}
+.ui-search-submit{
+    display: block;
+    width: 40px;
+    height: 36px;
+    position: absolute;
+    right: 0px;
+    top: 1px;
+}
+
+.ui-BackTop{
+    display: block;
+    position: fixed;
+    bottom: 80px;
+    right: 80px;
+    width: 40px;
+    height: 40px;
+    color: #ffffff;
+    background: url(../img/icon-go-up.png) center no-repeat;
+    background-color:lightgrey;
+    z-index: 9;   
+    border-radius: 50%;
+}
+
+.banner-slider{
+    position: relative;
+    width:544px;
+    height: 414px;
+    overflow: hidden;
+}
+.ui-slider-wrap{
+    width: 9999px;
+    position: absolute;
+    left: 0px;
+    right: 0;
+    transition: all .5s;
+}
+.ui-slider-wrap .item{
+    display: block;
+    float: left;
+    width: 544px;
+    height: 414px;
+}
+.ui-slider-arrow{
+    width: 544px;
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    margin-top: -20px;
+}
+.ui-slider-arrow .item{
+    display: block;
+    background: url(../img/ui-slider-arrow.png) no-repeat;
+    position: absolute;
+    top: 0;
+    width:40px;
+    height: 40px;
+}
+.ui-slider-arrow .left{
+    left: 0;
+}
+.ui-slider-arrow .right{
+    right: 0;
+    background-position:-40px 0;
+}
+.ui-slider-process{
+    width: 544px;
+    height: 12px;
+    text-align: center;
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+}
+.ui-slider-process .item{
+    display: inline-block;
+    width:16px;
+    height: 16px;
+    background: url(../img/ui-slider-process.png) no-repeat;
+}
+.ui-slider-process .item:hover,
+.ui-slider-process .item_focus{
+    background-position: -23px 0;
+}
