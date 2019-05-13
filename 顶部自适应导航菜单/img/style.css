@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+.header{
+    height: 100px;
+    background: #34495e;
+    padding: 0 20px;
+    color: #fff;
+}
+.logo{
+    float: left;
+    text-transform: uppercase;
+    line-height: 100px;
+}
+#chk{
+    position: absolute;
+    z-index: -111;
+    visibility: hidden;
+}
+.menu{
+    float: right;
+    line-height: 100px;
+}
+.menu a{
+    color: #fff;
+    text-transform: uppercase;
+    padding:0 10px;
+    text-decoration: none;
+    transition: 0.4s;
+}
+.show-menu-btn,
+.hide-menu-btn{
+    cursor: pointer;
+    font-size: 30px;
+    transition: 0.4s;
+    display: none;
+}
+.show-menu-btn{
+    float: right;
+}
+.show-menu-btn i{
+    line-height: 100px;
+}
+
+.menu a:hover,
+.show-menu-btn:hover,
+.hide-menu-btn:hover{
+    color: #3498db;
+}
+.content{
+    padding: 0 10px;
+    
+}
+.content img{
+    width: 100%;
+    max-width: 700px;
+    margin: 20px 0;
+}
+.content p{
+    text-align: justify;/**/
+}
+
+@media screen and (max-width:800px){
+
+.show-menu-btn,
+.hide-menu-btn{
+    display: block;
+}
+.menu{
+    position: fixed;
+    width: 30%;
+    height: 100vh;/**/
+    background: #333;
+    right: -100%;
+    top: 0;
+    text-align: center;
+    padding: 80px 0;
+    line-height:normal;
+    transition: 0.7s;
+}
+.menu a{
+    display: block;
+    padding: 20px;
+}
+.hide-menu-btn{
+    position: absolute;
+    top: 40px;
+    right: 40px;
+}
+
+#chk:checked ~.menu{
+    right: 0;
+}
+
+}

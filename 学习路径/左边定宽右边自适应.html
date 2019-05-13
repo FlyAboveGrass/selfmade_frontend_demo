@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html,body{
+            height: 100%;
+        }
+
+      .container{
+          margin: 0;
+          padding:0;
+          width: 1000px;
+          height: 100px;
+          display: flex;
+      }
+      .left{
+        width: 200px;
+        background: red;
+        flex: 0 1 auto;
+        height: 100%;
+      }
+      .right
+      {
+        height: 100%;
+          background: blue;
+          flex: 1;
+      }
+      .clearfix::after{
+    content: " ";
+    display: block;
+    height: 0;
+    line-height: 0;
+    clear: both;
+    zoom: 1;
+}
+    </style>
+</head>
+<body>
+    <div class="container clearfix">
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+</body>
+</html>

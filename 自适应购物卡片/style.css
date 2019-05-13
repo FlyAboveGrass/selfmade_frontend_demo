@@ -1,0 +1,89 @@
+body{
+    padding: 0;
+    margin: 0;
+    background: url(bg.jpg) no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.price-table{
+    display: flex;
+    flex-wrap:wrap;
+    max-width: 1200px;
+    margin: 0px auto;
+    text-align: center;
+
+}
+.col{
+    flex: 25%;
+    padding: 10px;
+    max-width: 320px;
+    box-sizing: border-box; /*让布局相对于border而不是content*/
+}
+.table{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 40px 20px;
+    position: relative;
+    box-shadow: 0 0 10px #000070;
+    background: #ffffff;
+    overflow:hidden;
+}
+.table h2{
+    text-transform: uppercase;
+}
+.table .pop{
+    background: red;
+    transform:rotate(45deg);
+    position: absolute;
+    top:13px;
+    right: -34px;
+    padding: 10px 40px;
+}
+.table ul{
+    margin: 0;
+    padding:0;
+}
+.table ul li{
+    list-style: none;
+    padding: 10px 0;
+}
+.table ul li strong{
+    font-size: 25px;
+    font-style: italic;
+}
+.price{
+    font-size: 40px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+.price span{
+    display: block;
+    font-size: 14px;
+    font-weight: normal;
+}
+.table a{
+    text-decoration: none;
+    display: block;
+    border: 2px solid #000070;
+    border-radius: 40px;
+    padding:5px 0;
+    text-transform: uppercase;
+    color: black;
+    margin: 20px 20px;
+    transition: .5s linear;
+}
+.table a:hover{
+    background: #2C3E50;
+    color: #fff;
+}
+
+@media screen and (max-width:980px){
+    .col{
+        flex: 50%;
+    }
+}
+
+@media screen and (max-width:700px){
+    .col{
+        flex: 100%;
+    }
+}
