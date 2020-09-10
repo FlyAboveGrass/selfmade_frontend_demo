@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>小心心</title>
+    <style>
+     body{
+         width: 100vw;
+         height: 100vh;
+         display: flex;
+         background: #34495e;
+         justify-content: center;
+         align-items: center;
+     }
+     .heart{
+         width: 200px;
+         height: 200px;
+         background: red;
+         transform: rotate(45deg) scale(.5);
+         animation: hd 2s;
+         opacity: 0.5;
+         animation-iteration-count: infinite;
+     }
+     @keyframes hd{
+        25%{
+            opacity: 1;
+            transform: rotate(45deg) scale(1);
+        }
+        50%{
+            opacity: .5;
+            transform: rotate(45deg) scale(.5);
+        }
+        75%{
+            opacity: 1;
+            transform: rotate(45deg) scale(1);
+        }
+        100%{
+            opacity: .5;
+            transform: rotate(45deg) scale(.5);
+        }
+     }
+     .heart::before{
+         content: '';
+         width: 200px;
+         height: 200px;
+         border-radius: 50%;
+         position: absolute;
+         background: red;
+         transform: translateX(-100px);
+     }
+     .heart::after{
+         content: '';
+         width: 200px;
+         height: 200px;
+         border-radius: 50%;
+         position: absolute;
+         background: red;
+         transform: translateY(-100px);
+     }
+    </style>
+</head>
+<body>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
+</body>
+</html>

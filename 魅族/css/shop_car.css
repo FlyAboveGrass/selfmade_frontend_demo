@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.header{
+    line-height: 4em;
+    width: 80%;
+    margin: 0px auto;
+}
+.logo{
+    float: left;
+    margin-right: 4em;
+}
+.path{
+    float: left;
+}
+.path-item{
+    display: inline;
+    opacity: .6;
+}
+.path-item::before{
+    content: '>';
+    width: 16px;
+    height: 16px;
+}
+.path-item:first-child{
+    opacity: 1;
+}
+.path-item:first-child::before{
+    content: ''
+}
+
+.jump{
+    float: right;
+}
+
+
+.car-content{
+    background-color: rgb(239,239,239)
+}
+

@@ -1,0 +1,91 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+    background: #333;
+}
+.text{
+    width: 100%;
+    height: 50vh;
+    position: relative;
+}
+h1{
+    position: absolute;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    font-size: 230px;
+    font-weight: bolder;
+    text-transform: uppercase;
+    transform:translate(-50%,-50%);
+    background:url(./bg.jpg) 50% 50%;
+    background-size: cover;
+    -webkit-text-fill-color: transparent;/*关键代码*/
+    -webkit-background-clip: text;       /*关键代码*/
+}
+
+.container{
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    background: #333333;;
+    justify-content:center;
+    align-items: center;
+}
+.container span{
+    font-size: 100px;
+    font-weight: bolder;
+    filter: blur(2px);
+    animation: animation 2.5s linear  infinite;
+}
+
+
+.container span:nth-child(1){
+    animation-delay: .2s;
+}
+.container span:nth-child(2){
+    animation-delay: .4s;
+}
+.container span:nth-child(3){
+    animation-delay: .6s;
+}
+.container span:nth-child(4){
+    animation-delay: .8s;
+}
+.container span:nth-child(5){
+    animation-delay: 1s;
+}
+.container span:nth-child(6){
+    animation-delay: 1.2s;
+}
+.container span:nth-child(7){
+    animation-delay: 1.4s;
+}
+.container span:nth-child(8){
+    animation-delay: 1.6s;
+}
+.container span:nth-child(9){
+    animation-delay: 1.8s;
+}
+
+@keyframes animation{
+    0%,100%{
+        color: #fff;
+        filter: blur(2px);
+        text-shadow: 
+        0 0 10px rgb(254,209,185),
+        0 0 20px  rgb(254,209,185),
+        0 0 30px  rgb(254,209,185),
+        0 0 40px  rgb(254,209,185),
+        0 0 30px  rgb(254,209,185),
+        0 0 30px  rgb(254,209,185),
+        0 0 30px  rgb(254,209,185),
+        0 0 30px  rgb(254,209,185),
+        0 0 30px  rgb(254,209,185);
+    }
+    5%,95%{
+        color: #335;
+        filter: blur(0px);
+        text-shadow: none;
+    }
+}

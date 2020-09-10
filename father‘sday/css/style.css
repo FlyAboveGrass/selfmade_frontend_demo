@@ -1,0 +1,164 @@
+body{
+    margin: 0;
+    padding: 0;  
+    background-color: #eaddcd; 
+}
+.music{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 32px;
+    height: 32px;
+    background: url(../images/player.png) no-repeat;
+    background-size: cover;
+    border: 0;
+    animation: turn cubic-bezier(1, 1, 0, 0) 2s infinite;
+    z-index: 10;
+}
+
+@keyframes turn{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+.swiper-container{
+    position: relative;
+}
+
+#slideone{
+    background:url(../images/p1.jpg);
+    background-size: cover;
+    background-position: center;
+}
+#slidetwo{
+    background:url(../images/p2.jpg);
+    background-size: cover;
+    background-position: center;
+}
+#slidethree{
+    background:url(../images/p3.jpg);
+    background-size: cover;
+    background-position: center;
+}
+#slidefour{
+    background:url(../images/p4.jpg);
+    background-size: cover;
+    background-position: center;
+}
+#slidefive{
+    background:url(../images/p5.jpg);
+    background-size: cover;
+    background-position: center;
+}
+#slidesix{
+    background:url(../images/p6.jpg);
+    background-size: cover;
+    background-position: center;
+}
+#slideseven{
+    background:url(../images/p7.jpg);
+    background-size: cover;
+    background-position: center;
+}
+#slideeight{
+    background:url(../images/p9.jpg) no-repeat;
+    background-size: 100% 100%;
+    background-position:center;
+}
+
+.swiper-slide{
+    position: relative;
+}
+.swiper-slide .pub-passdown {
+    position: absolute;
+    width: 10%;
+    left: 45%;
+    bottom: 4%;
+    background: none;
+    -webkit-animation-name: passdown;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-iteration-count: infinite;
+}
+
+@keyframes pub-passdown{
+    0%   {bottom:5%;}
+    50%  {bottom:3.2%;}
+    100% {bottom:5%;}
+}
+
+/*文字的位置*/
+.swiper-slide .anm1{
+    position: absolute;
+    top: 10%;
+      left: 35%;
+    opacity: 0;
+}
+
+.swiper-slide .anm2{
+    position: absolute;
+    top: 5%;
+    left: 55%;
+    opacity: 0;
+}
+/*一页的消失*/
+.swiper-slide-active .anm .anm1{
+    opacity: 1;
+    -webkit-transition: all 0.5s ease-in;
+}
+.swiper-slide-active .anm .anm2{
+    opacity: 1;
+    -webkit-transition: all 0.5s ease-in 0.6s;
+}
+
+
+@keyframes passdown
+{
+    0%   {bottom:5%;}
+    50%  {bottom:3.2%;}
+    100% {bottom:5%;}
+}
+
+.swiper-slide .pub-passdown img{
+    width: 100%;
+}
+
+
+
+@media only screen and (max-height: 480px){
+    .swiper-slide .anm1 img{
+        max-height: 180px;
+    }
+    .swiper-slide .anm2{
+        left: 65%;
+    }
+    .swiper-slide .anm2 img{
+        max-height: 180px;
+    }
+}
+@media only screen and (max-height: 568px) and (min-height: 480px){
+    .swiper-slide .anm1 img{
+        max-height: 210px;
+    }
+    .swiper-slide .anm2{
+        left: 65%;
+    }
+    .swiper-slide .anm2 img{
+        max-height: 240px;
+    }
+}
+@media only screen and (max-height: 667px) and (min-height: 568px){
+    .swiper-slide .anm1 img{
+        max-height: 210px;
+    }
+    .swiper-slide .anm2{
+        left: 65%;
+    }
+    .swiper-slide .anm2 img{
+        max-height: 300px;
+    }
+}

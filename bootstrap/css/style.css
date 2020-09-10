@@ -1,0 +1,95 @@
+html,body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar{
+    padding-left: 20px;
+}
+.li-color a{
+    color: black;
+}
+.justify-content-end{
+    font-size: 1.2em !important;
+    margin-right: 0;
+}
+/*让图片的宽高成比例*/
+.img-rate .carousel-item{
+    width: 100%;
+    height: 0;
+    padding-bottom: 30%; 
+}
+/*图片缩放与div相同*/
+.img-rate .carousel-item img{
+    width: 100%;
+}
+
+.webhosting{
+    text-align: center;
+}
+.webhosting a{
+    text-decoration: none;
+}
+
+.welcome hr{
+    border-top: 2px solid #b4b4b4;
+}
+
+
+.icon-larger div i{
+    font-size: 4rem;
+    margin: 1rem;
+}
+.fa-code{
+    color: #e54d26;
+}
+.fa-bold{
+    color: #563d7c;
+}
+.fa-css{
+    color: #2163af;
+}
+
+
+.padding{
+    padding: 1.5rem .8rem;
+}
+.btn-center{
+    margin: 1.5rem auto;
+    text-align: center;
+}
+.col-lg-6-horizen{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+}
+
+.a-block{
+    padding: 0 15px;
+}
+.a-block div a{
+    display: block;
+    color:darkgreen;
+    text-decoration: none;
+}
+
+
+.card{
+    margin-top: 1.1rem;
+    margin-bottom: 1.1rem;
+}
+
+
+.footer-footer{
+    width: 100%;
+    height: 6rem;
+    background: black;
+    color:white;
+    text-align: center;
+    line-height: 6rem;
+    padding: 0;
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/common/iconfont.css">
+    <link rel="stylesheet" href="./css/common/reset.css">
+    <link rel="stylesheet" href="./css/common/bootstrap.css">
+    <link rel="stylesheet" href="./css/login.css">
+    <title>Login</title>
+</head>
+<body>
+    <div class="header">
+        <a href="./">
+            <div class="logo"></div>
+        </a>
+    </div>
+    <div class="wrap">
+        <div class="wrap-content">
+            <form action="" class="loginBox">
+                <div class="message-login" id="message-login1">
+                    <div class="register-header">
+                        <h3>注册Flyme账户</h3>
+                    </div>
+                    <div class="loginByName">
+                        <input type="text" placeholder="手机号 / Flyme 账号" name="username" maxlength="50" id="username"
+                            autocomplete="off" class="inputs" />
+                        <input type="password" placeholder="密码" name="password" maxlength="50" id="password"
+                            class="inputs" autocomplete="off" />
+                        <div class="tip">
+                            <span class="tip-check" id="tip-check"></span>
+                            点击立即注册，即表示您同意并愿意遵守
+                            <a href="https://i.flyme.cn/serviceAgreement">Flyme服务协议</a> 
+                            和 
+                            <a href="https://www.meizu.com/legal.html">法律声明 </a>
+                        </div>
+                    </div>
+                    
+                    <button class="">注册</button>
+                    <div class="login-footer">
+                        <a href="./login.html">登录</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="./js/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    let tip = document.getElementById('tip-check')
+    tip.addEventListener('click',function(){
+        console.log(tip.style.backgroundColor)
+        if(!tip.style.backgroundColor){
+            tip.style.backgroundColor= 'rgb(31, 127, 251)'
+        }else{
+            tip.style.backgroundColor= ''
+        }
+    })
+})
+</script>
+</html>

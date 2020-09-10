@@ -1,0 +1,152 @@
+.header{
+    
+}
+.header a{
+    display: block;
+    width: 160px;
+    height: 70px;
+    margin: 0 0 0 130px;
+}
+
+.header a .logo{
+    width: 100%;
+    height: 0;
+    padding-bottom: 45%;
+    background: url(../images/logo-blue.png) no-repeat center center;
+}
+
+.wrap{
+    min-height: 700px;
+    background: url(../images/login_banner.jpg) no-repeat center;
+    background-size: 100%;
+    position: relative;
+}
+.wrap-content{
+    position: absolute;
+    top: 120px;
+    right: 14%;
+    width: 390px;
+    height: 450px;
+    background-color: white;
+}
+.wrap-content a:hover{
+    text-decoration: none;
+}
+
+.message-login .phone-login{
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 35px;
+    height: 35px;
+    background: url(../images/login_qr.png);
+    cursor: pointer;
+}
+.message-login button{
+    display: block;
+    width: 70%;
+    margin: 0 auto;
+    border-radius: 4px;
+    height: 40px;
+    color: white;
+    background-color: #32A5E7;
+}
+
+.tit{
+    line-height: 150px;
+    text-align: center;
+}
+.tit a{
+    display: inline-block;
+    padding: 0 15px;
+    font-size: 20px;
+    color: rgb(127, 127, 127);
+}
+.tit .active{
+    color: rgb(50, 165, 231);
+}
+.tit span::before{
+    content:"|";
+    font-size: 20px;
+}
+
+.loginByName{
+    font-size: 14px;
+}
+.loginByName input{
+    display: block;
+    margin: 20px auto 0;
+    width: 70%;
+    height: 40px;
+    padding-left: 12px;
+}
+.loginByName label{
+    display: block;
+    width: 70%;
+    margin: 30px auto;
+    font-size: 1.1em;
+    font-weight: 300;
+}
+.loginByName label input{
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    height: 15px;
+    width: 15px;
+}
+
+.login-footer{
+    width: 80%;
+    height: 20px;
+    margin:30px auto;
+}
+.login-footer>a:nth-child(1){
+    float: left;
+}
+.login-footer>a:nth-child(2){
+    float: right;
+}
+
+.check-number{
+    position: relative;
+}
+.check-number a{
+    display: block;
+    width: 40%;
+    height: 20px;
+    position: absolute;
+    padding: 0 12px;
+    border-left: 1px solid #7f7f7f;
+    right: 10px;
+    top: 12px;
+    color: rgb(50, 165, 231);
+}
+.check-number a:hover{
+    color: blue;
+}
+
+/* 注册 */
+.register-header{
+    margin-bottom: 8em;
+}
+.register-header h3{
+    color: #32A5E7;
+    text-align: center;
+}
+.tip{
+    width: 70%;
+    margin: 20px auto 20px;
+    font-size: .8em;
+}
+.tip span{
+    display: inline-block;
+    border: 1px solid gray;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+}
+
+.tip span:hover{
+    cursor: pointer;
+}

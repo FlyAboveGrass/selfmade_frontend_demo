@@ -1,0 +1,244 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: rgb(244, 244, 244);
+}
+body a:hover{
+    text-decoration: none;
+}
+.headerbox{
+    width: 100%;
+    height: 82px;
+    position: absolute;
+    min-width: 1240px;
+    top: 0;
+    left: 0;  
+    font-size: 20px;
+    z-index: 2;
+}
+.headerbox a{
+    color: white;
+}
+
+.headerbox .header{
+    height: 82px; 
+    width: 90%;
+    margin: 0 auto;
+}
+.headerbox .header .header-logo{
+    display: block;
+    float: left;
+    width: 125px;
+    height: 82px;
+    background: url(../../images/logo-blue.png) no-repeat center;
+}
+.headerbox .header .header-car{
+    position: relative;
+    float: right;
+    width: 30px;
+    height: 30px;
+    margin-top: 26px;
+    background: url(../../images/shopping-cart-white_5632033.png) no-repeat;
+}
+.header .header-car em{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: red;
+    border-radius: 50%;
+    width: 14px;
+    height: 14px;
+    line-height: 14px;
+    font-size: 12px;
+    text-align: center;
+    color: white;
+}
+
+.header-user-box{
+    position: relative;
+}
+.header-user-box .header-user{
+    background: url(../../images/icon-user-white@2x_e5c6494.png) no-repeat;
+    background-size: 100%;
+    float: right;
+    margin: 26px 10px 0 10px;
+    width: 30px;
+    height: 50px;
+    cursor: pointer;
+}
+.header-user-box .header-user .user-list{
+    position: absolute;
+    width: 130px;
+    top: 82px;
+    right: -4px;
+}
+.header-user .user-list li{
+    display: block;
+    width: 100%;
+    height: 43px;
+    line-height: 43px;
+    text-align: center;
+    font-size: 14px;
+}
+
+
+
+.header-search{
+    position: relative;
+    line-height: 30px;
+    float: right;
+    width: 170px;
+    height: 30px;
+    box-sizing: border-box;
+    margin: 26px 5px 0 5px;
+}
+.header-search input{
+    border-radius: 20px;
+    width: 160px;
+    height: 20px;
+    padding: 3px 5px;
+    font-size: 12px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.header-search a{
+    position: absolute;
+    display: block;
+    height: 36px;
+    width: 32px;
+    top: 6px;
+    right: 0px;
+    bottom: 0;
+    background: url(../../images/fangdajing.png) no-repeat;
+    background-size: 20px;
+}
+
+.header-nav{
+    float: right;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 26px 10px 0 10px;
+}
+
+.header-nav li{
+    float: left;
+    padding: 0px 18px;
+}
+.header-nav li a{
+    font-size: 15px;
+}
+
+.swiper-container{
+    min-width: 1240px;
+}
+
+
+/*footer*/
+.service-box{
+    width: 80%;
+    margin: 0 auto;
+    padding: 40px 0;
+    border-bottom: 1px solid #A3A3A3;
+    overflow: hidden;
+    zoom: 1;
+}
+.service-item-box{
+    width: 70%;
+    float: left;
+    display: flex;
+    margin: 0 20px;
+
+}
+.service-item-box .service-item{
+    flex: 1;
+    float: left;
+    height: 85px;
+}
+.service-item-box .service-item a{
+    text-align: center;
+    font-size: .8em;
+    display: block;
+    color: #A3A3A3;
+    box-sizing: border-box;
+    padding: 0 20px;
+}
+.service-item-box .service-item a:hover{
+    text-decoration: none;
+}
+.service-item a .service-img{
+    width: 40%;
+    padding-top: 40%; 
+    margin: 0px auto;
+}
+.service-item-box .service-item:nth-child(1) .service-img{
+    background: url(../../images/footer/shunfeng.png) no-repeat center;
+    background-size: contain;
+}
+.service-item-box .service-item:nth-child(2) .service-img{
+    background: url(../../images/footer/kuaisong.png) no-repeat center;
+    background-size: contain;
+}
+.service-item-box .service-item:nth-child(3) .service-img{
+    background: url(../../images/footer/tuihuo.png) no-repeat center;
+    background-size: contain;
+}
+.service-item-box .service-item:nth-child(4) .service-img{
+    background: url(../../images/footer/baohuan.png) no-repeat center;
+    background-size: contain;
+}
+.service-item-box .service-item:nth-child(5) .service-img{
+    background: url(../../images/footer/weixiu.png) no-repeat center;
+    background-size: contain;
+}
+.service-item-box .service-item:nth-child(6) .service-img{
+    background: url(../../images/footer/shangmen.png) no-repeat center;
+    background-size: contain;
+}
+
+.service-box .service-contact{
+    width: 20%;
+    float: right;
+    text-align: right;
+}
+.service-box .service-contact p:nth-child(1){
+    font-size: .7em;
+    color: rgb(186, 187, 192);
+    margin: 0;
+}
+.service-box .service-contact p:nth-child(2){
+    font-size: 1.4em;
+    color: rgb(11,187,239);
+    margin: 0;
+}
+.service-box .service-contact button{
+    background-color: rgb(11,187,239);
+    color: white;
+    border-radius: 25px 25px;
+}
+
+.service-box2{
+    width: 80%;
+    margin: 0 auto;
+    padding: 15px 0;
+}
+.meizu-footer-info{
+    font-size: .8em;
+    text-align: center;
+    color: #A3A3A3;
+}
+.meizu-footer-info a{
+    color: rgb(186, 187, 192);
+}
+.meizu-footer-info a:hover{
+    color: rgb(11,187,239);
+}
+.meizu-footer-info-left ul li{
+    display: inline-block;
+    padding: 0 10px;
+}
+.meizu-footer-certificate a{
+    display: inline-block;
+    padding: 0 10px;
+}

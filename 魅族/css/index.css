@@ -1,0 +1,176 @@
+body{
+    background: #F0FFFF;
+}
+
+.swiper-wrapper div{
+    width: 100%;
+    padding-top: 35%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.swiper-wrapper .bg1{
+    background-image: url(../images/banner1.jpg);
+}
+.swiper-wrapper .bg2{
+    background-image: url(../images/banner2.jpg);
+}
+.swiper-wrapper .bg3{
+    background-image: url(../images/banner3.jpg);
+}
+.swiper-wrapper .bg4{
+    background-image: url(../images/banner4.jpg);
+}
+.swiper-wrapper .bg5{
+    background-image: url(../images/banner5.jpg);
+}
+.swiper-wrapper .bg6{
+    background-image: url(../images/banner6.jpg);
+}
+.swiper-wrapper .bg7{
+    background-image: url(../images/banner7.jpg);
+}
+.swiper-wrapper .bg8{
+    background-image: url(../images/banner8.jpg);
+}
+
+.header-user .user-list{
+    display: none;
+}
+.header-user:hover .user-list{
+    display: block;
+}
+.user-list:hover .user-list{
+    display: block;
+}
+.section-ul{
+    width: 80%;
+    min-width: 1240px;
+    margin: 40px auto;
+    text-align: center;
+
+}
+.section-ul a{
+    display: block;
+}
+.section-ul li{
+    display: inline-block;
+    width: 24%;
+}
+.section-ul li:hover{
+    opacity: .7;
+}
+.section-ul h4{
+    color: black;
+}
+
+.section-ul p{
+    color: black;
+    opacity: .7;
+}
+
+/* 魅族手机 */
+.phone-banner-bbox img{
+    width: 100%;
+}
+.phone{
+    background-color: #F4F4F4;
+}
+.phone-h2{
+    text-align: center;
+    padding-top: 40px;
+    line-height: 60px;
+}
+
+.phone-box .phone-large,.phone-small{
+    padding: 15px 0px;
+}
+.phone-box a{
+    display: block;
+    background-color: azure;
+    text-align: center;
+    color: black;
+    padding-top: 2em;
+    margin: 10px auto;
+    transition: .3s
+}
+.phone-box a:hover{
+    box-shadow: 0px 0px 15px gray;
+}
+.phone-box a img{
+    width: 100%;
+    height: 25rem;
+}
+.phone-box .phone-large img{
+    height: 50rem;
+}
+.phone-box a span{
+    position: absolute;
+    line-height: 2.5em;
+    width: 2.5em;
+    top: 2em;
+    left: 2em;
+    background: red;
+    color: #FFFFFF;
+    border-radius: 50%;
+}
+.phone-box a h3{
+    
+}
+
+
+.phone-box .music-a{
+    padding-top: 0;
+}
+
+
+.shequ{
+    background: #F4F4F4;
+}
+.shequ-small .row>div{
+    margin: 1.5em auto;
+}
+.shequ-small a{
+    display: block;
+    background-color: white;
+    padding-bottom: 5em;
+    transition: .3s;
+}
+.shequ-small a:hover{
+    box-shadow: 0px 0px 16px gray;
+}
+.shequ-small img{
+    width: 100%;
+}
+.shequ-a .user{
+    line-height: 4em;
+}
+.shequ-a .content-container{
+    padding-left: 1.5em;
+}
+.shequ-a .user img{
+    width: 3em;
+    border-radius: 50%;
+}
+.shequ-a .user span{
+    margin-right: 1.5em;
+}
+.shequ-a .content{
+    color: black;
+    height: 4em;
+}
+
+@media (min-width: 1600px){
+    .container {
+        width: 1400px;
+    }
+}
+
+
+<a href="" class="shequ-a">
+<img src="./images/shequ1.jpg" alt="">
+<div class="content-container">
+    <p class="user"><span><img src="./images/user.jpg" alt=""></span>用户278098346</p>
+    <p class="content">魅族Note9邀请JK妹子出境，谁才是最美游戏姬？</p>
+    <p class="phone-type">魅族Note9</p>
+</div>                                   
+</a>

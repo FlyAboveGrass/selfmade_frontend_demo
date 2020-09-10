@@ -1,0 +1,160 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #d12b2b;
+}
+
+.face{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    background-color: chartreuse;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+    box-sizing: border-box;
+}
+
+
+.eye{
+    position: absolute;
+    background-color: azure;
+    text-align: center;
+    line-height: 50px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    top: 25%;
+    right: 25%;
+    transform:rotate(149deg);
+}
+.eye:first-child{
+    top: 25%;
+    left: 25%;
+}
+.eye::before{
+    position: absolute;
+    content: '';
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: black;
+}
+
+.face::before{
+    content: '';
+    position: absolute;
+    top: 180px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 60px;
+    background-color:red;
+    border-bottom-left-radius: 60px;
+    border-bottom-right-radius: 60px;
+    transition: .3s;
+}
+.face:hover::before{
+    top: 210px;
+    height: 30px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+
+
+
+/*哆啦A梦*/
+.outer-face{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+    width: 400px;
+    height: 400px;
+    background-color: #20b2e8;
+
+}
+.inner-face{
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    width: 340px;
+    height: 340px;
+    background-color: azure;
+}
+
+.inner-eye{
+    position: absolute;
+    top:0px;
+    right: 80px;
+    width: 50px;
+    height: 50px;
+    background-color: aliceblue;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+.inner-eye:first-child{
+    left: 80px;
+}
+.inner-eye::before{
+    position: absolute;
+    border-radius: 50%;
+    content: '';
+    width: 30px;
+    height: 30px;
+    background-color: black;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
