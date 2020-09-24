@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>环绕蛇形发光特效</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+        }
+        body{
+            background-color: #337EAC;
+        }
+        .container{
+            width: 400px;
+            height: 650px;
+            margin: 400px auto;
+            background-color: #204873;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+        .container::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            opacity: .2;
+            width: 200px;
+            height: 650px;
+            background-color: blanchedalmond;
+        }
+        .container .header{
+            position: absolute;
+            top: 1.2em;
+            right: 25px;
+            font-size: 4em;
+            font-weight: 700;
+            opacity: 0;
+            transition: .3s;
+            color: #964E1E;
+        }
+        .container:hover .header{
+            top: 25px;
+            opacity: 1;
+        }
+        .container h3{
+            font-size: 2.5em;
+            margin-top: 1.4em;
+            margin-bottom: .5em;
+        }
+        .container p{
+            font-size: 1.5em;
+            padding: 0 1.4em;
+            margin: 1.2em auto;
+            text-align: left;
+            word-break: break-all;
+        }
+        .container a {
+            display: block;
+            margin: 20px auto;
+            width: 150px;
+            height: 45px;
+            background-color: white;
+            color: black;
+            text-transform: uppercase;
+            text-align: center;
+            line-height: 45px;
+            font-weight: 800;
+            transition: .3s;
+            box-sizing: border-box;
+        }
+        .container:hover a {
+            height: 55px;
+            line-height: 55px;
+        }
+
+        .container:hover span:nth-child(1) {
+            position: absolute;
+            top: 0;
+            height: 3px;
+            width: 100%;
+            background: linear-gradient(to right, transparent, #1779ff);
+            transform: translateX(-100%);
+            animation: toright 2s linear infinite;
+        }
+        @keyframes toright {
+            0%{
+                transform: translateX(-100%);
+            }
+            100%{
+                transform: translateX(100%);
+            }
+        }
+        .container:hover span:nth-child(2) {
+            position: absolute;
+            right: 0;
+            height: 100%;
+            width: 3px;
+            background: linear-gradient(to bottom, transparent, #1779ff);
+            transform: translateX(-100%);
+            animation: tobottom 2s linear infinite;
+            animation-delay: 1s;
+        }
+        @keyframes tobottom {
+            0%{
+                transform: translateY(-100%);
+            }
+            100%{
+                transform: translateY(100%);
+            }
+        }
+        .container:hover span:nth-child(3) {
+            position: absolute;
+            bottom: 0;
+            height: 3px;
+            width: 100%;
+            background: linear-gradient(to left, transparent, #1779ff);
+            animation: toleft 2s linear infinite;
+        }
+        @keyframes toleft {
+            0%{
+                transform: translateX(100%);
+            }
+            100%{
+                transform: translateX(-100%);
+            }
+        }
+        .container:hover span:nth-child(4) {
+            position: absolute;
+            left: 0;
+            height: 100%;
+            width: 3px;
+            background: linear-gradient(to top, transparent, #1779ff);
+            animation: totop 2s linear infinite;
+            animation-delay: 1s;
+        }
+        @keyframes totop {
+            0%{
+                transform: translateY(100%);
+            }
+            100%{
+                transform: translateY(-100%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+
+        <div class="header">
+            01
+        </div>
+
+        <h3>Newcard</h3>
+        <p class="cotent">
+            This is My first card to show a snake effect.
+            This is My first card to show a snake effect.This is My first card to show a snake effect.
+            I hope that you will like it.Dear sister.
+        </p>
+        <a href="#">hover me</a>
+    </div>
+</body>
+</html>
