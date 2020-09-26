@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>仿ios卡片打开动效</title>
+    <style>
+        :root{
+            font-size: 15px;
+            font-family: Arial, Helvetica, sans-serif;
+
+            --body-width: 480px;
+            --card-width: 420px;
+            --card-height: 280px;
+            --img-height: 226px;
+            --img-height-expand: 320px;
+
+            background-color: #333;
+        }
+        body{
+            width: var(--body-width);
+            background-color: #eeeeee;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 1rem 0;
+            margin: auto;
+        }
+        .card{
+            width: var(--card-width);
+            height: var(--card-height);
+            border-color: #ffffff;
+            margin-bottom: 2rem;
+            transition: all .3s;
+        }
+        .card img {
+            width: 100%;
+            height: var(--img-height);
+            object-fit: cover;
+            border-top-left-radius: 1rem;
+            border-top-right-radius: 1rem;
+        }
+        .card h4 {
+            background-color: #ffffff;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0;
+            padding: .8rem 1.2rem;
+            letter-spacing: -0.5px;
+            border-bottom-left-radius: 1rem;
+            border-bottom-right-radius: 1rem;
+        }
+
+        .card .content-wrapper{
+            background-color: white;
+            height: 0;
+            overflow: hidden;
+            transition: all .3s ease-out;
+        }
+        .card .content-wrapper .content{
+            font-size: 1.2rem;
+            line-height: 1.5rem;
+            padding: 0 1.2rem;
+            overflow: auto;
+        }
+        .content-wrapper .content p{
+            font-size: 1.2rem;
+            line-height: 1.5rem;
+        }
+
+        .card.active{
+            transform: translateY(-300px) scale(calc(480/420));
+
+        }
+        .card.active h4{
+            
+        }
+        .card.active img {
+            
+        }
+        .card.active .content-wrapper{
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <img src="https://picsum.photos/900/600?random=1" alt="">
+        <h4>Lorem Header Card</h4>
+        <div class="content-wrapper">
+            <div class="content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt mollitia aspernatur similique numquam consequuntur praesentium aut animi quidem totam ratione velit, beatae rerum aliquam quod facilis sapiente laboriosam, vitae atque.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt mollitia aspernatur similique numquam consequuntur praesentium aut animi quidem totam ratione velit, beatae rerum aliquam quod facilis sapiente laboriosam, vitae atque.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt mollitia aspernatur similique numquam consequuntur praesentium aut animi quidem totam ratione velit, beatae rerum aliquam quod facilis sapiente laboriosam, vitae atque.</p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis, commodi ex. Veritatis, porro iste? Sunt deserunt exercitationem neque, excepturi alias non fugit maiores! Ducimus, eum minus commodi saepe assumenda fugit.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, repellat ipsam quia aspernatur vel minima ducimus quam reiciendis nobis corrupti exercitationem velit distinctio nulla rerum voluptatem, odio perspiciatis suscipit eius!</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi excepturi sunt iure quos praesentium soluta, ipsa error. Similique nisi sint labore alias, aliquid earum aperiam in assumenda ex pariatur neque!</p>
+                <p>Lorem ipsum dolor sit amet consectetur.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum adipisci vitae, optio aspernatur pariatur non asperiores impedit accusantium delectus repellendus culpa aliquid necessitatibus voluptatum fugit illum possimus praesentium voluptatem quod!</p>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <img src="https://picsum.photos/900/600?random=2" alt="">
+        <h4>Lorem, ipsum dolor.</h4>
+        <div class="content-wrapper">
+            <div class="content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt mollitia aspernatur similique numquam consequuntur praesentium aut animi quidem totam ratione velit, beatae rerum aliquam quod facilis sapiente laboriosam, vitae atque.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt mollitia aspernatur similique numquam consequuntur praesentium aut animi quidem totam ratione velit, beatae rerum aliquam quod facilis sapiente laboriosam, vitae atque.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt mollitia aspernatur similique numquam consequuntur praesentium aut animi quidem totam ratione velit, beatae rerum aliquam quod facilis sapiente laboriosam, vitae atque.</p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis, commodi ex. Veritatis, porro iste? Sunt deserunt exercitationem neque, excepturi alias non fugit maiores! Ducimus, eum minus commodi saepe assumenda fugit.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, repellat ipsam quia aspernatur vel minima ducimus quam reiciendis nobis corrupti exercitationem velit distinctio nulla rerum voluptatem, odio perspiciatis suscipit eius!</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi excepturi sunt iure quos praesentium soluta, ipsa error. Similique nisi sint labore alias, aliquid earum aperiam in assumenda ex pariatur neque!</p>
+                <p>Lorem ipsum dolor sit amet consectetur.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum adipisci vitae, optio aspernatur pariatur non asperiores impedit accusantium delectus repellendus culpa aliquid necessitatibus voluptatum fugit illum possimus praesentium voluptatem quod!</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="https://picsum.photos/900/600?random=3" alt="">
+        <h4>Lorem ipsum dolor sit.</h4>
+        <div class="content-wrapper">
+            <div class="content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt mollitia aspernatur similique numquam consequuntur praesentium aut animi quidem totam ratione velit, beatae rerum aliquam quod facilis sapiente laboriosam, vitae atque.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt mollitia aspernatur similique numquam consequuntur praesentium aut animi quidem totam ratione velit, beatae rerum aliquam quod facilis sapiente laboriosam, vitae atque.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt mollitia aspernatur similique numquam consequuntur praesentium aut animi quidem totam ratione velit, beatae rerum aliquam quod facilis sapiente laboriosam, vitae atque.</p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis, commodi ex. Veritatis, porro iste? Sunt deserunt exercitationem neque, excepturi alias non fugit maiores! Ducimus, eum minus commodi saepe assumenda fugit.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, repellat ipsam quia aspernatur vel minima ducimus quam reiciendis nobis corrupti exercitationem velit distinctio nulla rerum voluptatem, odio perspiciatis suscipit eius!</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi excepturi sunt iure quos praesentium soluta, ipsa error. Similique nisi sint labore alias, aliquid earum aperiam in assumenda ex pariatur neque!</p>
+                <p>Lorem ipsum dolor sit amet consectetur.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum adipisci vitae, optio aspernatur pariatur non asperiores impedit accusantium delectus repellendus culpa aliquid necessitatibus voluptatum fugit illum possimus praesentium voluptatem quod!</p>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <img src="https://picsum.photos/900/600?random=6" alt="">
+        <h4>Lorem, ipsum.</h4>
+        <div class="content-wrapper">
+            <div class="content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt mollitia aspernatur similique numquam consequuntur praesentium aut animi quidem totam ratione velit, beatae rerum aliquam quod facilis sapiente laboriosam, vitae atque.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt mollitia aspernatur similique numquam consequuntur praesentium aut animi quidem totam ratione velit, beatae rerum aliquam quod facilis sapiente laboriosam, vitae atque.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt mollitia aspernatur similique numquam consequuntur praesentium aut animi quidem totam ratione velit, beatae rerum aliquam quod facilis sapiente laboriosam, vitae atque.</p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis, commodi ex. Veritatis, porro iste? Sunt deserunt exercitationem neque, excepturi alias non fugit maiores! Ducimus, eum minus commodi saepe assumenda fugit.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, repellat ipsam quia aspernatur vel minima ducimus quam reiciendis nobis corrupti exercitationem velit distinctio nulla rerum voluptatem, odio perspiciatis suscipit eius!</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi excepturi sunt iure quos praesentium soluta, ipsa error. Similique nisi sint labore alias, aliquid earum aperiam in assumenda ex pariatur neque!</p>
+                <p>Lorem ipsum dolor sit amet consectetur.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum adipisci vitae, optio aspernatur pariatur non asperiores impedit accusantium delectus repellendus culpa aliquid necessitatibus voluptatum fugit illum possimus praesentium voluptatem quod!</p>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <img src="https://picsum.photos/900/600?random=7" alt="">
+        <h4>Lorem ipsum dolor sit amet consectetur.</h4>
+        <div class="content-wrapper">
+            <div class="content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt mollitia aspernatur similique numquam consequuntur praesentium aut animi quidem totam ratione velit, beatae rerum aliquam quod facilis sapiente laboriosam, vitae atque.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt mollitia aspernatur similique numquam consequuntur praesentium aut animi quidem totam ratione velit, beatae rerum aliquam quod facilis sapiente laboriosam, vitae atque.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt mollitia aspernatur similique numquam consequuntur praesentium aut animi quidem totam ratione velit, beatae rerum aliquam quod facilis sapiente laboriosam, vitae atque.</p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis, commodi ex. Veritatis, porro iste? Sunt deserunt exercitationem neque, excepturi alias non fugit maiores! Ducimus, eum minus commodi saepe assumenda fugit.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, repellat ipsam quia aspernatur vel minima ducimus quam reiciendis nobis corrupti exercitationem velit distinctio nulla rerum voluptatem, odio perspiciatis suscipit eius!</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi excepturi sunt iure quos praesentium soluta, ipsa error. Similique nisi sint labore alias, aliquid earum aperiam in assumenda ex pariatur neque!</p>
+                <p>Lorem ipsum dolor sit amet consectetur.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum adipisci vitae, optio aspernatur pariatur non asperiores impedit accusantium delectus repellendus culpa aliquid necessitatibus voluptatum fugit illum possimus praesentium voluptatem quod!</p>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script>
+    $('.card').on('click', function(e) {
+        console.log('e', e);
+        let card = $(e.currentTarget)
+        $(card).toggleClass('active');
+    })
+</script>
+</html>
