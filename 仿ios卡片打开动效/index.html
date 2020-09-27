@@ -15,8 +15,12 @@
             --img-height: 226px;
             --img-height-expand: 320px;
 
+            --card-offset-top: 0px;
+
             background-color: #333;
         }
+
+        
         body{
             width: var(--body-width);
             background-color: #eeeeee;
@@ -27,14 +31,20 @@
             padding: 1rem 0;
             margin: auto;
         }
+        body.noscroll{
+            overflow: hidden;
+        }
         .card{
             width: var(--card-width);
-            height: var(--card-height);
+            /* height: var(--card-height); */
             border-color: #ffffff;
             margin-bottom: 2rem;
-            transition: all .3s;
+            box-shadow: 0 0.2rem 2rem rgb(0, 0, 0, 0.1);
+            transition:  .3s all cubic-bezier(0,1, 0.95, 1.05);
+            border-radius: 1rem;
         }
         .card img {
+            display: block; /* 一定要加上，img是替换内联元素，类似text的存在。会自动在末尾加上一个空白符，导致img与后面的标签有几个px的间隙。*/
             width: 100%;
             height: var(--img-height);
             object-fit: cover;
@@ -43,10 +53,10 @@
         }
         .card h4 {
             background-color: #ffffff;
-            font-size: 1.5rem;
+            font-size: 22px;
             font-weight: bold;
             margin: 0;
-            padding: .8rem 1.2rem;
+            padding: 12px 18px;
             letter-spacing: -0.5px;
             border-bottom-left-radius: 1rem;
             border-bottom-right-radius: 1rem;
@@ -61,7 +71,7 @@
         .card .content-wrapper .content{
             font-size: 1.2rem;
             line-height: 1.5rem;
-            padding: 0 1.2rem;
+            padding: 0 1.2rem 4rem 1.2rem;
             overflow: auto;
         }
         .content-wrapper .content p{
@@ -70,23 +80,33 @@
         }
 
         .card.active{
-            transform: translateY(-300px) scale(calc(480/420));
-
+            transform: translateY(var(--card-offset-top)) scale(calc(480/420));
+            transform-origin: 50% 0; /* 基于顶部边框的中点为参考点，默认是以原来的盒子中间为参考点，这样会让部分图片看不到*/
+            border-radius: 0;
         }
         .card.active h4{
-            
+            border-radius: 0;
         }
         .card.active img {
-            
+            border-radius: 0;
+            height: var(--img-height-expand);
         }
         .card.active .content-wrapper{
-            height: 100vh;
+            height: calc(100vh - 450px);  /* 卡片的高度和h4 的高度都要放大transform的比例 */
+            overflow: auto;
+            transform: scale(1);
+        }
+
+        .card.active .content-wrapper::-webkit-scrollbar { 
+            width: 0 !important; /* 隐藏滚动条 */
         }
     </style>
 </head>
 <body>
     <div class="card">
-        <img src="https://picsum.photos/900/600?random=1" alt="">
+        <div>
+            <img src="https://picsum.photos/900/600?random=1" alt="">
+        </div>
         <h4>Lorem Header Card</h4>
         <div class="content-wrapper">
             <div class="content">
@@ -98,6 +118,7 @@
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi excepturi sunt iure quos praesentium soluta, ipsa error. Similique nisi sint labore alias, aliquid earum aperiam in assumenda ex pariatur neque!</p>
                 <p>Lorem ipsum dolor sit amet consectetur.</p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum adipisci vitae, optio aspernatur pariatur non asperiores impedit accusantium delectus repellendus culpa aliquid necessitatibus voluptatum fugit illum possimus praesentium voluptatem quod!</p>
+                <p>End</p>
             </div>
         </div>
     </div>
@@ -114,6 +135,7 @@
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi excepturi sunt iure quos praesentium soluta, ipsa error. Similique nisi sint labore alias, aliquid earum aperiam in assumenda ex pariatur neque!</p>
                 <p>Lorem ipsum dolor sit amet consectetur.</p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum adipisci vitae, optio aspernatur pariatur non asperiores impedit accusantium delectus repellendus culpa aliquid necessitatibus voluptatum fugit illum possimus praesentium voluptatem quod!</p>
+                <p>End</p>
             </div>
         </div>
     </div>
@@ -131,6 +153,7 @@
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi excepturi sunt iure quos praesentium soluta, ipsa error. Similique nisi sint labore alias, aliquid earum aperiam in assumenda ex pariatur neque!</p>
                 <p>Lorem ipsum dolor sit amet consectetur.</p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum adipisci vitae, optio aspernatur pariatur non asperiores impedit accusantium delectus repellendus culpa aliquid necessitatibus voluptatum fugit illum possimus praesentium voluptatem quod!</p>
+                <p>End</p>
             </div>
         </div>
     </div>
@@ -147,6 +170,7 @@
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi excepturi sunt iure quos praesentium soluta, ipsa error. Similique nisi sint labore alias, aliquid earum aperiam in assumenda ex pariatur neque!</p>
                 <p>Lorem ipsum dolor sit amet consectetur.</p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum adipisci vitae, optio aspernatur pariatur non asperiores impedit accusantium delectus repellendus culpa aliquid necessitatibus voluptatum fugit illum possimus praesentium voluptatem quod!</p>
+                <p>End</p>
             </div>
         </div>
     </div>
@@ -163,6 +187,7 @@
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi excepturi sunt iure quos praesentium soluta, ipsa error. Similique nisi sint labore alias, aliquid earum aperiam in assumenda ex pariatur neque!</p>
                 <p>Lorem ipsum dolor sit amet consectetur.</p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum adipisci vitae, optio aspernatur pariatur non asperiores impedit accusantium delectus repellendus culpa aliquid necessitatibus voluptatum fugit illum possimus praesentium voluptatem quod!</p>
+                <p>End</p>
             </div>
         </div>
     </div>
@@ -170,9 +195,24 @@
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script>
     $('.card').on('click', function(e) {
-        console.log('e', e);
         let card = $(e.currentTarget)
+        let car_offset_scrolltop = $(card).offset().top - $(window).scrollTop();
+
+        let content_height = $(window).height - ($('.card.active img').outerHeight() + $('.card.active h4').outerHeight()) * 420/480;
+        console.log('content_height', content_height);
+        $('.active content').css('height', content_height);
+
+        // $(":root")[0].style.setProperty("--data-offset-top", `-${car_offset_scrolltop}px`);
+
         $(card).toggleClass('active');
+        document.documentElement.style.setProperty('--card-offset-top', `-${car_offset_scrolltop}px`);
+
+        if($(card).hasClass('active')){
+            $('body').addClass('noscroll');
+        }else{
+            $('body').removeClass('noscroll');
+        }
     })
+        
 </script>
 </html>
