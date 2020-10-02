@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css动效库</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            width: 100vw;
+            height: 100vh;
+            background-color: rgb(9,8,33);
+        }
+        a{
+            text-decoration: none;
+            color: white;
+        }
+
+        .container{
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 980px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            font-size: 26px;
+        }
+        .container .css{
+            flex-basis: 25%;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container .css .css-item{ 
+            position: relative;
+            overflow: hidden;
+            min-width: 3em;
+        } 
+
+        .container .css:hover{
+            background-color: rgb(24,25,58);
+        }
+
+
+        /* bubble button */
+        .container .css .button{
+            padding: .6em ;
+            z-index: 2;
+            background-color: rgb(45,48,88);
+            text-transform: uppercase;
+        }
+        .container .css .button::before{
+            transition: all 1s;   
+            z-index: -1;         
+            content: '';
+            position: absolute;
+            top: 100%;
+            right: 100%;
+            width: 4em;
+            height: 4em;
+            border-radius: 50%;
+            background-color: rgb(60,239,255);
+        }
+        .container .css .button:hover{
+            color: black;
+            background-color: none;
+        }
+        .container .button:hover::before{
+            top: 0;
+            right: calc(100% - 2em);
+            transform: scale(5,5);
+        }
+
+        /* jelly button */
+        .jelly{
+            padding: .6em ;
+            z-index: 2;
+            background-color: rgb(45,48,88);
+            text-transform: uppercase;
+        }
+        .jelly:hover{
+            animation: jelly .5s;
+        }
+        @keyframes jelly {
+            0%{
+                transform: scale(1, 1);
+            }
+            25%{
+                transform: scale(.9, 1.1);
+            }
+            75%{
+                transform: scale(1.1, .9);
+            }
+            100%{
+                transform: scale(1, 1);
+            }
+        }
+
+        /* progress */
+        .progress{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .progress span{
+            display: block;
+            height: 2em;
+            width: 4px;
+            background-color: rgb(60,239,255);
+            transform: scaleY(1);
+        }
+        .progress span:nth-child(1) {
+            animation: progress 1.5s 0s infinite;
+        }
+        .progress span:nth-child(2) {
+            animation: progress 1.5s .3s infinite;
+        }
+        .progress span:nth-child(3) {
+            animation: progress 1.5s 0.6s infinite;
+        }
+        .progress span:nth-child(4) {
+            animation: progress 1.5s 0.9s infinite;
+        }
+        @keyframes progress {
+            0%, 100%{
+                transform: scaleY(1);
+            }
+            50%{
+                transform: scale(0.5);
+            }
+        }
+
+        /* balls */
+        .balls{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+
+        }
+        .balls span{
+            display: block;
+            border-radius: 50%;
+            background-color: tomato;
+            width: 16px;
+            height: 16px;
+            margin: .1em;
+        }
+        .balls span:nth-child(1){
+            animation: ball-left 1.5s infinite;
+        }
+        .balls span:nth-child(3){
+            animation: ball-right 1.5s 0.75s infinite;
+        }
+        @keyframes ball-left {
+            0%, 50%{
+                transform: translateX(0);
+            }
+            25%{
+                transform: translateX(-150%);
+            }
+        }
+        @keyframes ball-right {
+            0%, 50%{
+                transform: translateX(0);
+            }
+            25%{
+                transform: translateX(150%);
+            }
+        }
+
+        /* dots */
+        .dots{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+        .dots span{
+            display: block;
+            border-radius: 50%;
+            background-color: tomato;
+            width: 16px;
+            height: 16px;
+            margin: 0px 5px;
+        }
+        .dots span:nth-child(1){
+            animation: fade-dot 1.5s infinite;
+        }
+        .dots span:nth-child(2){
+            animation: fade-dot 1.5s 0.4s infinite;
+        }
+        .dots span:nth-child(3){
+            animation: fade-dot 1.5s 0.8s infinite;
+        }
+        @keyframes fade-dot {
+            0%{
+                opacity: 1;
+            }
+            100%{
+                opacity: 0;
+            }
+        }
+        
+        /* spin */
+        .spin{
+            border-radius: 50%;
+            width: 3em;
+            height: 3em;
+            border: 3px solid hsla(185, 100%, 62%, 0.2);
+            border-top-color: rgb(60,239,255);
+            animation: spin-rotate 1s infinite;
+        }
+        @keyframes spin-rotate {
+            from{
+                transform: rotate(0deg);
+            }
+            to{
+                transform: rotate(360deg);
+            }
+        }
+
+        /* spin-stretch */
+        .container .css .spin-stretch{
+            border-radius: 50%;
+            width: 3em;
+            height: 3em;
+            border: 3px solid hsla(185, 100%, 62%, 0.9);
+            position: relative;
+            overflow: visible;
+        }
+        .spin-stretch span{
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgb(252,47,112);
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: spin-stretch-rotate 1s infinite;
+        }
+        @keyframes spin-stretch-rotate {
+            from{
+                transform: rotate(0deg);
+            }
+            to{
+                transform: rotate(360deg);
+            }
+        }
+
+        /* dots-up */
+        .container .css .dots-up{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            overflow: visible;
+        }
+        .container .css .dots-up span{
+            display: block;
+            border-radius: 50%;
+            background-color: tomato;
+            width: 16px;
+            height: 16px;
+            margin: 0px 5px;
+            animation: dot-up 1s infinite;
+        }
+        .container .css .dots-up span:nth-child(2){
+            animation-delay: .25s;
+        }
+        .container .css .dots-up span:nth-child(3){
+            animation-delay: .5s;
+        }
+        @keyframes dot-up{
+            0%,100%{
+                transform: translateY(0);
+            }
+            50%{
+                transform: translateY(-1em);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="css">
+            <a href="" class="button css-item">bubble</a>
+        </div>
+        <div class="css">
+            <a href="" class="css-item jelly">jelly</a>
+        </div>
+        <div class="css">
+            <div class="css-item progress">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="css">
+            <div class="css-item balls">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="css">
+            <div class="css-item dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="css">
+            <div class="css-item spin">
+
+            </div>
+        </div>
+        <div class="css">
+            <div class="css-item spin-stretch">
+                <span></span>
+            </div>
+        </div>
+        <div class="css">
+            <div class="css-item dots-up">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="css"></div>
+        <div class="css"></div>
+        <div class="css"></div>
+        <div class="css"></div>
+        <div class="css"></div>
+        <div class="css"></div>
+        <div class="css"></div>
+        <div class="css"></div>
+    </div>
+</body>
+</html>
