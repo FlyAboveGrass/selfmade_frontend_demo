@@ -80,7 +80,7 @@
 </body>
 <script>
     window.addEventListener('scroll', (e) => {
-        // console.log(document.documentElement.scrollTop,document.documentElement.scrollHeight,document.documentElement.clientHeight)
+        // 滚动的距离
         let scrolled = document.documentElement.scrollTop / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
 
         let $h1 = document.querySelector('h1')
@@ -89,7 +89,8 @@
         let $A13TextBg = document.querySelector('#the-chip .text-bg')
         
         // 滚动距离增加， 芯片的大小变大，使得背景后面的视频可以显现
-        $theChip.style.width = $theChip.style.height = document.documentElement.clientWidth * 40 * (scrolled * scrolled * scrolled) + 'px' //scrolled * scrolled *scrolled * 20000 +'px'; 
+        // scrolled的三次方计算，使得chip的放大先平缓后急促
+        $theChip.style.width = $theChip.style.height = document.documentElement.clientWidth * 40 * (scrolled * scrolled * scrolled) + 'px'; 
 
         // 当滚动距离在 0 - 10% 增长的时候，将h1的位置上移，并且让其透明
         if(scrolled <= 0.1) {
@@ -106,14 +107,12 @@
             $A13.style.opacity = 1;
         }
 
-        // 当滚动距离大于50%的时候，这时候将文字的遮挡背景变透明，让背景后面的呈现出来
+        // 当滚动距离大于50%的时候，这时候将文字的遮挡背景变透明，让背景后面的视频呈现出来
         if(scrolled >= 0.5){
             $A13TextBg.style.opacity = (1 - scrolled) / 0.5;
         }else{
             $A13TextBg.style.opacity = 1;
         }
-
-
     })
 </script>
 </html>
