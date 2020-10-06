@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>百叶窗上滑效果</title>
+    <link rel="stylesheet" href="./style.scss">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .layout{
+            background-color: gray;
+            display: flex;
+            flex-direction: row;
+        }
+        .layout li{
+            list-style: none;
+            flex: 1;
+            height: 100vh;
+            transition: 1.2s ease-in-out;
+            background: url(https://picsum.photos/1280/960);
+        }
+
+        .layout li:nth-child(1){
+            background-position: 0%;
+        }
+        .layout li:nth-child(2){
+            background-position: 10%;
+            transition-delay: 0.05s;
+        }
+        .layout li:nth-child(3){
+            background-position: 20%;
+            transition-delay: 0.10s;
+        }
+        .layout li:nth-child(4){
+            background-position: 30%;
+            transition-delay: 0.15s;
+        }
+        .layout li:nth-child(5){
+            background-position: 40%;
+            transition-delay: 0.2s;
+        }
+        .layout li:nth-child(6){
+            background-position: 50%;
+            transition-delay: 0.25s;
+        }
+        .layout li:nth-child(7){
+            background-position: 60%;
+            transition-delay: 0.30s;
+        }
+        .layout li:nth-child(8){
+            background-position: 70%;
+            transition-delay: 0.35s;
+        }
+        .layout li:nth-child(9){
+            background-position: 80%;
+            transition-delay: 0.40s;
+        }
+        .layout li:nth-child(10){
+            background-position: 90%;
+            transition-delay: 0.45s;
+        }
+
+
+        .layout:hover li {
+            transform: translateY(-100vh);
+        }
+    </style>
+</head>
+<body>
+    <div class="layout">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </div>
+</body>
+</html>
