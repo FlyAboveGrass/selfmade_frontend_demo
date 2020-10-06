@@ -20,48 +20,80 @@
             list-style: none;
             flex: 1;
             height: 100vh;
+            overflow: hidden;
             transition: 1.2s ease-in-out;
-            background: url(https://picsum.photos/1280/960);
+        }
+        .layout li::before{
+            content: '';
+            display: block;
+            background: url(https://picsum.photos/1280/1060);
+            background-size: cover;            
+            width: 100vw;
+            height: 100vh;
+            
         }
 
         .layout li:nth-child(1){
-            background-position: 0%;
+            transition-delay: 0.05s;
         }
         .layout li:nth-child(2){
-            background-position: 10%;
             transition-delay: 0.05s;
         }
         .layout li:nth-child(3){
-            background-position: 20%;
             transition-delay: 0.10s;
         }
         .layout li:nth-child(4){
-            background-position: 30%;
             transition-delay: 0.15s;
         }
         .layout li:nth-child(5){
-            background-position: 40%;
+            background-position: -40vw;
             transition-delay: 0.2s;
         }
         .layout li:nth-child(6){
-            background-position: 50%;
             transition-delay: 0.25s;
         }
         .layout li:nth-child(7){
-            background-position: 60%;
             transition-delay: 0.30s;
         }
         .layout li:nth-child(8){
-            background-position: 70%;
             transition-delay: 0.35s;
         }
         .layout li:nth-child(9){
-            background-position: 80%;
             transition-delay: 0.40s;
         }
         .layout li:nth-child(10){
-            background-position: 90%;
             transition-delay: 0.45s;
+        }
+
+        .layout li:nth-child(1)::before{
+            background-position: -0vw;
+        }
+        .layout li:nth-child(2)::before{
+            background-position: -10vw;
+        }
+        .layout li:nth-child(3)::before{
+            background-position: -20vw;
+        }
+        .layout li:nth-child(4)::before{
+            background-position: -30vw;
+        }
+        .layout li:nth-child(5)::before{
+            background-position: -40vw;
+        }
+        .layout li:nth-child(6)::before{
+            background-position: -50vw;
+        }
+        .layout li:nth-child(7)::before{
+            background-position: -60vw;
+        }
+        .layout li:nth-child(8)::before{
+            background-position: -70vw;
+        }
+        .layout li:nth-child(9)::before{
+            background-position: -80vw;
+        }
+        .layout li:nth-child(10)::before{
+            background-position: -90vw;
         }
 
 
