@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            
+        }
+        /* .filter-mix {
+            position: relative;
+            transform: translate(-50%, -50%);
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #fff;
+            filter: contrast(20) blur(6px) ;
+        } */
+        
+
+        .container {
+            position: relative;
+            filter: contrast(30);
+            background-color: black;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .drop {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #ffffff;
+            filter: blur(6px);
+        }
+        .drop:nth-child(1) {
+            animation: 2s drop  linear infinite;
+        }
+        .drop:nth-child(2) {
+            animation: 2s drop  linear 0.5s infinite;
+        }
+        .collection {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #ffffff;
+            position: relative;
+            filter: blur(6px);
+            animation: 2s collection  linear infinite;
+        }
+        span{
+            position: absolute;
+        }
+
+        @keyframes drop {
+            0% {
+                transform: scale(.2) translateY(-1500%);
+                opacity: 0;
+            }
+            40% {
+                transform: scale(.3) translateY(-400%);
+                opacity: 0.7;
+            }
+            100% {
+                transform: scale(.3) translateY(0);
+                opacity: 1;
+            }
+        }
+        @keyframes collection {
+            0% {
+                transform: scale(1) rotate(0deg);
+            }
+            50% {
+                transform: scale(0.8) rotate(180deg);
+                width: 90px;
+                border-top-left-radius: 40%;
+                border-bottom-right-radius: 45%;
+            }
+            100% {
+                transform: scale(1) rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="drop"></div>
+        <div class="drop"></div>
+        <div class="collection"></div>
+        <span>80%</span>
+    </div>
+</body>
+</html>
