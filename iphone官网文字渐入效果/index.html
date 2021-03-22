@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root {
+            --percentage: 0%;
+        }
+        body{
+            background-color: black;
+            margin: 0;
+            min-height: 300vh;
+        }
+        h1 {
+            font-size: 40px;
+            background: linear-gradient(75deg,
+                rgba(255, 255, 255, 0),
+                rgba(255,255, 255, 0),
+                rgba(255, 255, 255, 1),
+                rgba(255, 255, 255, 1)
+             );
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            background-size: 300% 100%;
+            background-position-x: calc(var(--percentage));
+            transition: 0.3s;
+        }
+        /* h1:hover {
+            background-position-x: 100%;
+        } */
+        .sticky {
+            height: 100vh;
+            position: sticky;
+            top: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="sticky">
+        <h1>LESS BEZEL &nbsp; MORE SCREEN</h1>
+    </div>
+</body>
+<script>
+const h1 = document.querySelector('.sticky h1')
+document.addEventListener('scroll', (e) => {
+    let scroll = document.documentElement.scrollTop / (document.documentElement.scrollHeight - document.documentElement.clientHeight)
+    console.log(e, `${scroll}%`);
+
+    h1.style.setProperty('--percentage', `${scroll * 100}%`)
+})
+</script>
+</html>
