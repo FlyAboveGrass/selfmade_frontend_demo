@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>颜色切换特效</title>
+    <style>
+        html {
+            font-size: 48px;
+        }
+        body {
+            margin: 0;
+            height: 6000px;
+            background-color: black;
+        }
+        .sticky-container {
+            position: sticky;
+            top: 0;   /*  让三个div都保持在顶部 */
+            width: 100%;
+            height: 100vh;
+        }
+        .sticky-container.no-sticky {
+            position: relative;
+            overflow: visible;
+        }
+        .sticky-container.no-sticky  .iphone {
+            position: relative;
+        }
+        .iphone {
+            width: 100%;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .iphone img {
+            display: block;
+            width: 360px;
+            margin-bottom: -460px;
+        }
+
+
+        .black {
+            z-index: 10;
+            background-color: black;
+            color: white;
+        }
+        .white {
+            z-index: 20;
+            background-color: white;
+            color: #8b8b99;
+        }
+        .red {
+            z-index: 30;
+            background-color: #960b19;
+            color: #e57571;
+            padding-bottom: 100vh;  /* 要将red延长，避免滚动到底部的时候red的iphone图片显示不全 */
+        }
+    </style>
+</head>
+<body>
+    <!-- 将三个div重叠，然后在scroll的时候将上层的容易进行裁剪露出下面的内容 -->
+    <div class="sticky-container">
+        <div class="iphone black">
+            <h3>Comes In Black <br> &nbsp;</h3>
+            <img src="./img/black.png" alt="">
+        </div>
+        <div class="iphone white">
+            <h3>Comes In Black <br> White </h3>
+            <img src="./img/white.png" alt="">
+        </div>
+        <div class="iphone red">
+            <h3>Comes In White <br>Red</h3>
+            <img src="./img/red.png" alt="">
+        </div>
+    </div>
+</body>
+<script>
+    window.addEventListener('scroll', (e) => {
+        let clientHeight2 = document.documentElement.clientHeight * 2;
+        let scrolled = document.documentElement.scrollTop / clientHeight2;
+
+        let $white = document.querySelector('.white')
+        let $red = document.querySelector('.red')
+
+        $white.style.clipPath = `inset(${(0.5 - scrolled)/0.5 * 100}% 0px 0px 0px)`
+        $red.style.clipPath = `inset(${(1 - scrolled)/0.5 * 100}% 0px 0px 0px)`
+
+        let $sticky_container = document.querySelector('.sticky-container')
+        if(scrolled >= 1) {
+            $sticky_container.classList.add('no-sticky')
+        } else {
+            $sticky_container.classList.remove('no-sticky')
+        }
+    })
+</script>
+</html>
